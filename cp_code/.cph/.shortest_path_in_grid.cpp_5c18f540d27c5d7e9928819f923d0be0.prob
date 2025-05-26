@@ -1,0 +1,1 @@
+{"name":"Local: shortest_path_in_grid","url":"/Users/aryan/cp_code/shortest_path_in_grid.cpp","tests":[{"id":1742898483509,"input":"5 8\n########\n#.A#...#\n#.##.#B#\n#......#\n########","output":"9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/aryan/cp_code/shortest_path_in_grid.cpp","group":"local","local":true}
