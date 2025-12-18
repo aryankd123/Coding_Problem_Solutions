@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
+typedef pair<int,int> pi;
+typedef pair<int,pair<int,int>> ppi;
 const int lowest = -1e6 ;
 const int highest= 1e6 ;
 const int M =1e9+7;
@@ -62,47 +64,112 @@ const int M =1e9+7;
 //for (int i = MAXN; i >= 1; i--) { inv[i - 1] = inv[i] * i % MOD; }
 //}
 //int choose(int n, int r) { return fac[n] * inv[r] % MOD * inv[n - r] % MOD; }
+//int min_max_binsearch(vector<int>& nums, int k) {
+//int n=nums.size();int sum=0;int ans=-1;int l = *max_element(nums.begin(), nums.end());     // the min possible subarray sum is the largest value of the array
+//for(int i=0;i<n;i++){sum+=nums[i];}
+//int r=sum; // the max possible sum of the subarray will be the subarray which is the entire array 
+//while(l<=r){int mid=(l)+(r-l)/2;int ct=1;int pnt=-1;int flag_s=nums[0];for(int i=1;i<n;i++){  if(flag_s>mid){pnt=0;break;}   
+//flag_s+=nums[i];}if(ct>k || pnt==0){l=mid+1;}           //move to the larger subarray sum 
+//if(ct<=k){r=mid-1;ans=mid;}}return ans;}
+struct TreeNode {
+int val;
+TreeNode *left, *right;
+TreeNode() : val(0), left(NULL), right(NULL) {}
+TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+TreeNode(int x, TreeNode *l, TreeNode *r) : val(x), left(l), right(r) {}
+};
+ 
+ 
+ 
+vector<int> bfs(vector<vector<int>> &adj) {
+queue<int> q;
+ vector<int> bfs;
+vector<int> vis(adj.size(),0);
+q.push(0);
+vis[0]=1;
+while(!q.empty()){
+ int node=q.front();
+q.pop();
+bfs.push_back(node);
+for(auto it: adj[node]){
+if(!vis[it]) { q.push(it);
+vis[it]=1;
+}
+}
+}
+ return bfs;
+}
+ 
+ 
+void dfs_maker(int node, vector<vector<int>>& adj, vector<int>& vis, vector<int>& res) {
+vis[node] = 1;
+res.push_back(node);
+for (int neighbor : adj[node]) {
+if (!vis[neighbor]) {
+dfs_maker(neighbor, adj, vis, res);
+}
+}
+}
+vector<int> dfs(int n, vector<vector<int>>& adj) {
+vector<int> vis(n, 0), res;
+for (int i = 0; i < n; ++i) {
+if (!vis[i]) {
+dfs_maker(i, adj, vis, res);
+}
+}
+return res;
+}
 void solve(){
 int n,x;
 cin>>n>>x;
+
 vector<int> price;
 for(int i=0;i<n;i++){
 int x;
 cin>>x;
 price.push_back(x);
 }
+
 vector<int> pages;
 for(int i=0;i<n;i++){
 int x;
 cin>>x;
 pages.push_back(x);
-
 }
-vector<int> dp(x+1,0);
-dp[0]=0;
 
-for(int i=0;i<=n;i++){
-int val=price[i];
-    for(int j=x;j>=val;j--){
-        {dp[j]=max(dp[j],dp[j-val]+pages[i]);}
-                            }
-                    }       
-int ans=INT_MIN;
-for(int i=0;i<=x;i++){
-if(dp[i]>ans)ans=dp[i];
+vector<vector<int>>dp(2,vector<int>(x+1,0));
+//for(int i=0;i<=x;i++)dp[0][i]=0;
+dp[0][0]=0;
+dp[1][0]=0;
+
+
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=x;j++){
+        int skip =0;
+        int pick =0;
+        if(j-price[i-1]>=0)pick+=(pages[i-1]+(dp[0][j-price[i-1]]));
+        skip+=dp[0][j];
+        dp[1][j]=max(skip,pick);
+    }
+    for(int j=1;j<=x;j++){
+        dp[0][j]=dp[1][j];
+        dp[1][j]=0;
+    }
 }
-cout<<ans;
+cout<<dp[0][x];
+
 
 } 
 signed main()
 {
-
 ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 //precompute()
 //factorial();
 //inverses();
-
+// int t;
+// cin>>t;
+// while (t--){
 solve();
-
+// }
     return 0;
 }
