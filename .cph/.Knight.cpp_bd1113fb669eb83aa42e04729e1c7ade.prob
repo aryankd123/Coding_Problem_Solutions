@@ -1,0 +1,1 @@
+{"name":"Local: Knight","url":"c:\\code_files\\Knight.cpp","tests":[{"id":1779211831158,"input":"31 34\n","output":"293930\n"},{"id":1779211848637,"input":"3 2","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code_files\\Knight.cpp","group":"local","local":true}

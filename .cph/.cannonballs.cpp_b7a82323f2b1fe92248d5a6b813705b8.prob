@@ -1,0 +1,1 @@
+{"name":"Local: cannonballs","url":"c:\\code_files\\cannonballs.cpp","tests":[{"id":1779475160680,"input":"5\n1\n5\n9\n15\n91","output":"1\n2\n3\n3\n2"},{"id":1779476069508,"input":"1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code_files\\cannonballs.cpp","group":"local","local":true}

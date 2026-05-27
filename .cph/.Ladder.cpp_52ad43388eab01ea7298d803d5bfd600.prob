@@ -1,0 +1,1 @@
+{"name":"Local: Ladder","url":"c:\\code_files\\Ladder.cpp","tests":[{"id":1779207012531,"input":"2\n1 2","output":"3"},{"id":1779207027246,"input":"2\n2 -1","output":"1"},{"id":1779207043163,"input":"3\n-1 2 1","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code_files\\Ladder.cpp","group":"local","local":true}

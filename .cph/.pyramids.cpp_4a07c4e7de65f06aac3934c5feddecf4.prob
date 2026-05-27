@@ -1,0 +1,1 @@
+{"name":"Local: pyramids","url":"c:\\code_files\\pyramids.cpp","tests":[{"id":1779264743804,"input":"5\n1\n5\n9\n15\n91","output":"1\n2\n3\n3\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code_files\\pyramids.cpp","group":"local","local":true}

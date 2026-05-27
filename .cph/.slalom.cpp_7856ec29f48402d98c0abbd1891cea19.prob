@@ -1,0 +1,1 @@
+{"name":"Local: slalom","url":"c:\\code_files\\slalom.cpp","tests":[{"id":1779220330622,"input":"4\n1\n4 3\n5 6 7\n8 9 0 9","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code_files\\slalom.cpp","group":"local","local":true}
