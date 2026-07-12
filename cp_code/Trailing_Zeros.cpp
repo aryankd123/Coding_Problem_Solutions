@@ -2,14 +2,15 @@
 using namespace std;
 
 void solve() {
-    int d,f;
-    cin>>d>>f;
-    int start =f;
-    while(start<=d){
-        start+=7;
+    int n;
+    cin>>n;
+    int ans=0;
+    int div=5;
+    while(div<=n){
+        ans+=(n/div);
+        div*=5;
     }
-    cout<<start -d;
-
+    cout<<ans;
 }
 
 int main() {

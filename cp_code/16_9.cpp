@@ -1,26 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+typedef long double ld;
 void solve() {
-    int d,f;
-    cin>>d>>f;
-    int start =f;
-    while(start<=d){
-        start+=7;
-    }
-    cout<<start -d;
-
+    ld x,y;
+    cin>>x>>y;
+    if(x/y == ((ld)16)/((ld)9))cout<<"Yes\n";
+    else cout<<"No\n";
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
-    // int t;
-    // cin >> t;
-    // while(t--) {
+  
         solve();
-    // }
+    
     
     return 0;
 }

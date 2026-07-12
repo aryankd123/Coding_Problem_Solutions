@@ -1,26 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long 
+
 void solve() {
-    int n,k;
-    cin>>n>>k;
+    int n,m;
+    cin>>n>>m;
     map<int,int>mp;
-    mp[0]=1;
-
-    int prefix=0;
-    int ans=0;
-
-    for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
-        prefix+=x;
-        ans+= mp[prefix-k];
-        mp[prefix]++;
+    for(int i=1;i<=m;i++){
+        mp[i]=-1;
     }
-    cout<<ans;
+    for(int i=0;i<n;i++){
+        int x,y;
+        cin>>x>>y;
+        mp[x]=max(mp[x],y);
+        
+    }
+    for(auto [key,val]:mp){
+        cout<<val<<" ";
+    }
+
 }
 
-signed  main() {
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     

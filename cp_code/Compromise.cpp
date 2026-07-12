@@ -1,26 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long 
-void solve() {
-    int n,k;
-    cin>>n>>k;
-    map<int,int>mp;
-    mp[0]=1;
 
-    int prefix=0;
-    int ans=0;
+void solve() {
+    int n;
+    cin>>n;
+    // vector<int>v;
+    bool fl=0;
 
     for(int i=0;i<n;i++){
         int x;
         cin>>x;
-        prefix+=x;
-        ans+= mp[prefix-k];
-        mp[prefix]++;
+        if(x>=0)fl=1;
     }
-    cout<<ans;
+    if(fl==0)cout<<"Yes";
+    else cout<<"No";
 }
 
-signed  main() {
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     

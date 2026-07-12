@@ -1,26 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long 
+
 void solve() {
-    int n,k;
-    cin>>n>>k;
-    map<int,int>mp;
-    mp[0]=1;
-
-    int prefix=0;
-    int ans=0;
-
+    string s;
+    cin>>s;
+    int n=s.size();
+    string ans="";
     for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
-        prefix+=x;
-        ans+= mp[prefix-k];
-        mp[prefix]++;
+        char c=s[i];
+        if(c>='0' && c<='9')ans.push_back(c);
     }
     cout<<ans;
 }
 
-signed  main() {
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     

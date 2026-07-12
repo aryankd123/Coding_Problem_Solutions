@@ -21,7 +21,7 @@ void paint(int x){
     // return paint(parent[x]);
     for(auto neigh:parent[x]){
         if(can_reach[neigh]==1)continue ;
-        return paint(neigh);
+         paint(neigh);
     }
     
 }

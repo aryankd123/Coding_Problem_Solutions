@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#define int long long 
 void solve() {
    int n,a,b;
    cin>>n>>a>>b;
@@ -28,11 +28,11 @@ while(l<=n){
     // it2--;
     int flag =distance(cnt_b.begin(),it);
 
-    auto it3=lower_bound(cnt_a.begin()+l,cnt_a.end(),a+cnt_a[l-1]);
+    auto it3=lower_bound(cnt_a.begin()+l,cnt_a.begin()+flag,a+cnt_a[l-1]);
 
     int flag2= distance(cnt_a.begin(),it3);
 
-  if(flag2<flag)   ans+=flag-flag2;
+     ans+=flag-flag2;
 
 
 l++;
@@ -42,7 +42,7 @@ cout<<ans;
 
 }
 
-int main() {
+signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     

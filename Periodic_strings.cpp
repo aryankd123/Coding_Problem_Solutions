@@ -42,9 +42,9 @@ int main() {
     // cout<<n<<endl;
     bool flag =0;
     for(int i=1;i<n;i++){
-        if( (n%i==0) && i+ans[i]==n){cout<<i;flag=1;break ;}
+        if( (n%i==0) && i+ans[i]==n){cout<<i<<"\n";flag=1;break ;}
     }
-    // if(flag==0)cout<<n;
+    if(flag==0)cout<<n<<"\n";
 
     if(j!=t-1)cout<<"\n";
     }

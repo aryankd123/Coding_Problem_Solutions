@@ -2,25 +2,31 @@
 using namespace std;
 #define int long long 
 void solve() {
-    int n,k;
-    cin>>n>>k;
-    map<int,int>mp;
-    mp[0]=1;
-
-    int prefix=0;
-    int ans=0;
-
+    int n;
+    cin>>n;
+    vector<int>v;
     for(int i=0;i<n;i++){
         int x;
         cin>>x;
-        prefix+=x;
-        ans+= mp[prefix-k];
-        mp[prefix]++;
+
+        v.push_back(x);
+
     }
-    cout<<ans;
+    sort(v.begin(),v.end());
+    int prefix=0;
+    
+    for(int i=0;i<n;i++){
+        if(v[i]>prefix+1){
+            cout<<prefix+1;return ;
+        }
+        prefix+=v[i];
+
+    }
+    cout<<prefix+1;
+
 }
 
-signed  main() {
+signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     

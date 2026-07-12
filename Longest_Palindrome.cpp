@@ -1,25 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long 
+const int p=31;
+const int m=1e9+101;
+
+
+vector<int> power(1e6+10 ,1);
+
+void construct(){
+for(int i=1;i<1e6+5,i++){
+    power[i]=power
+}
+}
+
+
 void solve() {
-    int n,k;
-    cin>>n>>k;
-    set<int>st;
-    st.insert(0);
-    int pre=0;
-    int ans=0;
+ string s;
+ cin>>s;
+ int n=s.size();
 
-    for(int i=0;i<n;i++){
-        int x;
-        cin>>x;
+ for(int i=0;i<n;i++){
 
-        pre+=x;
-        if(st.find(pre-k)!=st.end())ans++;
-        st.insert(pre);
-    }
-
-cout<<ans;
-
+ }   
 
 
 }

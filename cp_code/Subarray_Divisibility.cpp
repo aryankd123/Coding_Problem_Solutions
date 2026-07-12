@@ -2,25 +2,32 @@
 using namespace std;
 #define int long long 
 void solve() {
-    int n,k;
-    cin>>n>>k;
-    map<int,int>mp;
-    mp[0]=1;
-
-    int prefix=0;
-    int ans=0;
-
+    int n;
+    cin>>n;
+    vector<int>v;
     for(int i=0;i<n;i++){
         int x;
         cin>>x;
-        prefix+=x;
-        ans+= mp[prefix-k];
-        mp[prefix]++;
+        v.push_back(x);
+
     }
-    cout<<ans;
+    int pre=0;
+    map<int,int>mp;
+    int ans=0;
+
+    for(int i=0;i<n;i++){
+        pre=((pre+v[i])%n+n)%n;
+        ans+=mp[pre];
+        if(pre==0)ans++;
+        mp[pre]++;
+    }
+    
+cout<<ans;
+
+
 }
 
-signed  main() {
+signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     

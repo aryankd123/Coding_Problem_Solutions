@@ -5,37 +5,34 @@ void solve() {
     int n;
     cin>>n;
     vector<int>v;
-    stack<int>st;
-    vector<int>ans(n,0);
-    
+int tot=0;
     for(int i=0;i<n;i++){
         int x;
         cin>>x;
         v.push_back(x);
+        tot=tot|x;
     }
+    int k=0;
+
+    int curr=0;
     for(int i=0;i<n;i++){
-        int x =v[i];
-        
-       
-        while(!st.empty() && v[st.top()]>=x){
-            st.pop();
-        }
-        if(!st.empty())ans[i]=st.top()+1;
-        
-        st.push(i);
+        curr=curr|v[i];
+        if(curr==tot){k++;curr=0;}
+
     }
-    for(auto val : ans)cout<<val<<" ";
+    cout<<n-k<<"\n";
+
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
-    // int t;
-    // cin >> t;
-    // while(t--) {
+    int t;
+    cin >> t;
+    while(t--) {
         solve();
-    // }
+    }
     
     return 0;
 }

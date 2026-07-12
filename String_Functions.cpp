@@ -50,6 +50,8 @@ vector<int>pi_fn(string& s){
 return pi;
 
 }
+
+
 void solve() {
     string s;
     cin>>s;
